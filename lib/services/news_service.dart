@@ -16,6 +16,7 @@ class NewsServiece {
       List<ArticlesModel> articlesList = [];
       for (var article in articles) {
         ArticlesModel articlesModel = ArticlesModel(
+            link : article['link'],
             image: article['image_url'],
             title: article['title'],
             description: article['description']);
