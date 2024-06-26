@@ -15,11 +15,7 @@ class NewsServiece {
           jsonData['results']; //as List<Map<String,dynamic>>;
       List<ArticlesModel> articlesList = [];
       for (var article in articles) {
-        ArticlesModel articlesModel = ArticlesModel(
-            link : article['link'],
-            image: article['image_url'],
-            title: article['title'],
-            description: article['description']);
+        ArticlesModel articlesModel = ArticlesModel.fromJson(article);
         articlesList.add(articlesModel);
       }
       return articlesList;
@@ -27,5 +23,4 @@ class NewsServiece {
       return [];
     }
   }
-
 }
